@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"PlotMetrics": "00_core.ipynb"}
+index = {"PlotMetrics": "00_core.ipynb",
+         "PlotMetricsEnd": "00_core.ipynb",
+         "PlotMetricsProgress": "00_core.ipynb"}
 
 modules = ["core.py"]
 

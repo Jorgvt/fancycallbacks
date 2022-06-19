@@ -31,6 +31,61 @@ nb_path: "00_core.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plot-metrics-callback">Plot metrics callback<a class="anchor-link" href="#Plot-metrics-callback"> </a></h2><blockquote><p>This object will be our main callback used to organize our plottings.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="PlotMetrics" class="doc_header"><code>class</code> <code>PlotMetrics</code><a href="https://github.com/Jorgvt/fancycallbacks/tree/master/fancycallbacks/core.py#L12" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PlotMetrics</code>(<strong><code>figsize</code></strong>=<em><code>(9, 4)</code></em>) :: <code>History</code></p>
+</blockquote>
+<p>Callback that records events into a <code>History</code> object.</p>
+<p>This callback is automatically applied to
+every Keras model. The <code>History</code> object
+gets returned by the <code>fit</code> method of models.</p>
+<p>Example:</p>
+<blockquote><blockquote><blockquote><p>model = tf.keras.models.Sequential([tf.keras.layers.Dense(10)])
+model.compile(tf.keras.optimizers.SGD(), loss='mse')
+history = model.fit(np.arange(100).reshape(5, 20), np.zeros(5),
+...                     epochs=10)
+print(history.params)
+{'verbose': 1, 'epochs': 10, 'steps': 1}</p>
+<h1 id="check-the-keys-of-history-object">check the keys of history object<a class="anchor-link" href="#check-the-keys-of-history-object"> </a></h1><p>print(history.history.keys())
+dict_keys(['loss'])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Plot-metrics-after-training">Plot metrics after training<a class="anchor-link" href="#Plot-metrics-after-training"> </a></h2><blockquote><p>Normally, we all like to plot our metrics after the training has concluded. Because of this, we built a <code>Callback</code> that will automatically plot them for you once the training is completed.</p>
 </blockquote>
 
@@ -48,7 +103,61 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="PlotMetrics" class="doc_header"><code>class</code> <code>PlotMetrics</code><a href="https://github.com/Jorgvt/fancycallbacks/tree/master/fancycallbacks/core.py#L11" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PlotMetrics</code>(<strong><code>figsize</code></strong>=<em><code>(9, 4)</code></em>) :: <code>History</code></p>
+<h2 id="PlotMetricsEnd" class="doc_header"><code>class</code> <code>PlotMetricsEnd</code><a href="https://github.com/Jorgvt/fancycallbacks/tree/master/fancycallbacks/core.py#L21" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PlotMetricsEnd</code>(<strong>**<code>kwargs</code></strong>) :: <a href="/fancycallbacks/core.html#PlotMetrics"><code>PlotMetrics</code></a></p>
+</blockquote>
+<p>Callback that records events into a <code>History</code> object.</p>
+<p>This callback is automatically applied to
+every Keras model. The <code>History</code> object
+gets returned by the <code>fit</code> method of models.</p>
+<p>Example:</p>
+<blockquote><blockquote><blockquote><p>model = tf.keras.models.Sequential([tf.keras.layers.Dense(10)])
+model.compile(tf.keras.optimizers.SGD(), loss='mse')
+history = model.fit(np.arange(100).reshape(5, 20), np.zeros(5),
+...                     epochs=10)
+print(history.params)
+{'verbose': 1, 'epochs': 10, 'steps': 1}</p>
+<h1 id="check-the-keys-of-history-object">check the keys of history object<a class="anchor-link" href="#check-the-keys-of-history-object"> </a></h1><p>print(history.history.keys())
+dict_keys(['loss'])</p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Plot-metrics-during-training">Plot metrics during training<a class="anchor-link" href="#Plot-metrics-during-training"> </a></h2><p>Insted of settling with the Keras way of showing the progress during the training, sometimes its fancier to be able to see a dynamic plot of your metrics during training.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="PlotMetricsProgress" class="doc_header"><code>class</code> <code>PlotMetricsProgress</code><a href="https://github.com/Jorgvt/fancycallbacks/tree/master/fancycallbacks/core.py#L36" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>PlotMetricsProgress</code>(<strong>**<code>kwargs</code></strong>) :: <a href="/fancycallbacks/core.html#PlotMetrics"><code>PlotMetrics</code></a></p>
 </blockquote>
 <p>Callback that records events into a <code>History</code> object.</p>
 <p>This callback is automatically applied to
